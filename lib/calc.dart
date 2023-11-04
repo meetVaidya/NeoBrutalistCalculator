@@ -73,6 +73,33 @@ class _CalcState extends State<Calc> {
     setState(() {});
   }
 
+  Widget button (text, buttonColour) {
+    return AnimatedContainer(
+                        duration: Duration(milliseconds: 300),
+                        width: 74.46,
+                        height: 74.46,
+                        decoration: BoxDecoration(color: buttonColour, boxShadow: [
+                          !isACTapped
+                              ? BoxShadow(
+                                  color: Colors.black, offset: Offset(7, 7))
+                              : BoxShadow(
+                                  color: Colors.black, offset: Offset(1, 1))
+                        ]),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            text,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 40.68,
+                              fontFamily: 'IBM Plex Mono',
+                              fontWeight: FontWeight.w400,
+                              height: 0,
+                            ),
+                          ),
+                        ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
